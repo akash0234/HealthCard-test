@@ -1,0 +1,80 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@section Styles{
+    <style>
+
+    </style>
+}
+<div class="container">
+    <div class="title">Registration</div>
+    <form asp-action="CreateHealthCard" asp-controller="Home" enctype="multipart/form-data" method="post">
+        <div class="user__details">
+            <div class="input__box">
+                <span class="details">First Name</span>
+                <input name="FirstName" type="text" placeholder="Enter First Name" required>
+            </div>
+            <div class="input__box">
+                <span class="details">Middle Name</span>
+                <input name="MiddleName" type="text" placeholder="Enter Middle Name" required>
+            </div>
+            <div class="input__box">
+                <span class="details">Last Name</span>
+                <input name="LastName" type="text" placeholder="Enter Last Name" required>
+            </div>
+
+            <div class="input__box">
+                <span class="details">Date Of Birth</span>
+                <input name="BirthDate" type="date" placeholder="Enter Birth Date" required>
+            </div>
+
+            <div class="input__box">
+                <span class="details">PHR Address</span>
+                <input name="PHRAddress" type="email" placeholder="Enter PHR Address" required>
+            </div>
+
+            <div class="input__box">
+                <span class="details">Phone Number</span>
+                <input name="PhoneNumber" type="text"  oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="10" placeholder="012-345-6789" required>
+            </div>
+
+            <div class="input__box">
+                <span class="details">Profile Picture</span>
+                <div class="avatar-upload">
+                    <div class="avatar-edit">
+                        <input name="ProfileImage" type='file' id="imageUpload" accept=".png, .jpg, .jpeg" required />
+                        <label for="imageUpload"><svg fill="#000000" viewBox="-5 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>pencil</title> <path d="M18.344 4.781l-3.406 3.063s1.125 0.688 2.156 1.656c1 0.969 1.719 2.063 1.719 2.063l2.906-3.469s-0.031-0.625-1.406-1.969c-1.406-1.344-1.969-1.344-1.969-1.344zM7.25 21.938l-0.156 1.5 10.813-11.25s-0.719-1-1.594-1.844c-0.906-0.875-1.938-1.563-1.938-1.563l-10.813 11.25 1.688-0.094 0.188 1.813zM0 26.719l2.688-5.5 1.5-0.125 0.125 1.719 1.813 0.25-0.188 1.375-5.438 2.75z"></path> </g></svg></label>
+                    </div>
+                    <div class="avatar-preview">
+                        <div id="imagePreview" style="background-image: url(http://i.pravatar.cc/500?img=7);">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="gender__details">
+            <input type="radio" value="Male" name="Gender" id="dot-1">
+            <input type="radio" value="Female" name="Gender" id="dot-2">
+            <input type="radio" value="N/A" name="Gender" id="dot-3">
+            <span class="gender__title">Gender</span>
+            <div class="category">
+                <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span>Male</span>
+                </label>
+                <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span>Female</span>
+                </label>
+                <label for="dot-3">
+                    <span class="dot three"></span>
+                    <span>Prefer not to say</span>
+                </label>
+            </div>
+        </div>
+        <div class="button">
+            <input type="submit" value="Register">
+        </div>
+    </form>
+</div>

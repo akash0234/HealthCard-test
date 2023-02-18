@@ -1,0 +1,41 @@
+﻿@using HealthCard.Entity.ViewModels;
+@model UserVM
+@if (Model != null)
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="Healthcard">
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <div class="ProfileImage">
+                                <img class="img-fluid" src="~/@Model.ProfileImagePath" />
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="ProfileDetails">
+                                <h4><strong>@Model.FirstName @Model.MiddleName @Model.LastName</strong></h4>
+                                <h4><strong>Health ID Number:</strong> &nbsp; @Model.HealthID</h4>
+                                <h4><strong>PHR Address:</strong>&nbsp;@Model.PHRAddress</h4>
+                                <h4><strong>Date of Birth:</strong>&nbsp;@Model.BirthDate</h4>
+                                <h4><strong>Gender:</strong>&nbsp;@Model.Gender</h4>
+                                <h4><strong>Mobile:</strong>&nbsp;@Model.PhoneNumber</h4>
+
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="QRCode">
+                                <img class="img-fluid" src="@Model.QRCode" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="@Model.FirstName">
+    </div>
+
+}
